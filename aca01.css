@@ -1,0 +1,201 @@
+li {
+  max-width: 600px;
+  text-align: justify;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="text"] {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .search-icon {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+    padding: 0.5em;
+    cursor: pointer;
+  }
+  
+  svg {
+    fill: currentColor;
+    height: 1em;
+    width: 1em;
+  }
+  header nav {
+    display: flex;
+    
+  }
+  
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    }
+    
+    header nav ul li {
+    margin-right: 1em;
+    }
+    
+    header nav a {
+      color: #0000FF;
+    text-decoration: none;
+    }
+    
+    nav {
+        width: 50%;
+      }
+    main {
+    padding: 1em;
+    }
+    
+    section {
+    margin-bottom: 2em;
+    }
+
+    /* Estilos formulario de contacto */
+    form {
+        width: 80%;
+        margin: 0 auto;
+        text-align: left;
+      }
+      
+      label {
+        font-weight: bold;
+        margin-top: 1rem;
+        display: block;
+      }
+      
+      input[type="text"], input[type="email"], textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      
+      input[type="submit"] {
+        background-color: #0000FF;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1rem;
+        width: 100%;
+      }
+      
+    /* Estilos para el código de fragmentos */
+
+    .code-block {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 1em;
+        position: relative;
+      }
+      
+      .code-block pre {
+        margin: 0;
+      }
+      
+      .copy-button {
+        background-color: #333;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        position: absolute;
+        right: 1em;
+        top: 1em;
+      }
+      
+      .copy-button svg {
+        height: 1em;
+        margin-right: 0.5em;
+        width: 1em;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .main-content {
+        width: 100%;
+        padding: 0 20px;
+      }
+      
+      @media (min-width: 768px) {
+        .main-content {
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+      }
+      
+      h1 {
+        color: blue;
+      }
+      .section-cont {
+        margin-left: 20px;
+      }
+      /* Ampliación de estilos de la caja de fragmentos*/
+      .code-container {
+        width: 80%;
+        margin: 0 auto;
+      }
+      
+      .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #eee !important;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+      }
+      
+      .language-name {
+        font-weight: bold;
+        color: #333;
+      }
+      
+      .copy-code {
+        color: #333;
+        cursor: pointer;
+      }
+      
+      /* Fin código de fragmentos */
+      

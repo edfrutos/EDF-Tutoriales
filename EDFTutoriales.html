@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cursos de Programación</title>
+  <style>
+    li {
+      max-width: 600px;
+      text-align: justify;
+    }
+    
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: aqua;
+        padding: 20px;
+        width: 80%;
+        margin: 0 auto;
+      }
+    
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        width: 80%;
+        margin: 0 auto;
+      }
+    
+      .search-container {
+        display: flex;
+        align-items: center;
+      }
+      
+      input[type="text"] {
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 0 4px;
+      }
+      
+      .search-icon {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0 4px 4px 0;
+        padding: 0.5em;
+        cursor: pointer;
+      }
+      
+      svg {
+        fill: currentColor;
+        height: 1em;
+        width: 1em;
+      }
+      header nav {
+        display: flex;
+        
+      }
+      
+      header nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        }
+        
+        header nav ul li {
+        margin-right: 1em;
+        }
+        
+        header nav a {
+          color: #0000FF;
+        text-decoration: none;
+        }
+        
+        nav {
+            width: 50%;
+          }
+        main {
+        padding: 1em;
+        }
+        
+        section {
+        margin-bottom: 2em;
+        }
+    
+        /* Estilos formulario de contacto */
+        form {
+            width: 80%;
+            margin: 0 auto;
+            text-align: left;
+          }
+          
+          label {
+            font-weight: bold;
+            margin-top: 1rem;
+            display: block;
+          }
+          
+          input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+          }
+          
+          input[type="submit"] {
+            background-color: #0000FF;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+            width: 100%;
+          }
+          
+        /* Estilos para el código de fragmentos */
+    
+        .code-block {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 1em;
+            position: relative;
+          }
+          
+          .code-block pre {
+            margin: 0;
+          }
+          
+          .copy-button {
+            background-color: #333;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            position: absolute;
+            right: 1em;
+            top: 1em;
+          }
+          
+          .copy-button svg {
+            height: 1em;
+            margin-right: 0.5em;
+            width: 1em;
+          }
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          .main-content {
+            width: 100%;
+            padding: 0 20px;
+          }
+          
+          @media (min-width: 768px) {
+            .main-content {
+              max-width: 1000px;
+              margin: 0 auto;
+            }
+          }
+          
+          h1 {
+            color: blue;
+          }
+          .section-cont {
+            margin-left: 20px;
+          }
+          /* Ampliación de estilos de la caja de fragmentos*/
+          .code-container {
+            width: 80%;
+            margin: 0 auto;
+          }
+          
+          .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #eee !important;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+          }
+          
+          .language-name {
+            font-weight: bold;
+            color: #333;
+          }
+          
+          .copy-code {
+            color: #333;
+            cursor: pointer;
+          }
+          
+          /* Fin código de fragmentos */
+          
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css"
+    integrity="sha256-BkCv/wOd4eUp+4c8WbN3mgvfMyjKQNbd9c8kZQlgv0=" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header>
+    <h1>EDF Tutoriales</h1>
+    <div class="container"></div>
+    <nav>
+      <ul>
+        <li>
+          <p><a href="#presentacion">Presentación</a>
+          <p>
+        </li>
+        <li>
+          <p><a href="#html">HTML</a>
+          <p>
+        </li>
+        <li>
+          <p><a href="#css">CSS</a>
+          <p>
+        </li>
+        <li>
+          <p><a href="#javascript">JavaScript</a>
+          <p>
+        </li>
+        <li>
+          <p><a href="#contacto">Contacto</a>
+          <p>
+        </li>
+      </ul>
+      <!--<form action="#search-input">
+        <input style="width: 250px;" type="text" placeholder="Buscar por conceptos">
+        <button type="submit">Ir</button>
+      </form>-->
+      <div class="search-container">
+        <input style="width: 250px;" type="text" placeholder="Buscar por conceptos">
+        <button class="search-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            <path d="M0 0h24v24H0z" fill="none"/>
+          </svg>
+        </button>
+      </div>
+      
+    </nav>
+    </div>
+  </header>
+  <main class="main-content">
+
+    <section id="presentation">
+      <h1>Bienvenido a nuestra página de tutoriales y manuales de programación</h1>
+      <p>En este sitio encontrarás tutoriales y manuales de HTML, CSS, JavaScript, Python y PHP para mejorar tus
+        habilidades de programación.</p>
+    </section>
+
+    <!-- Los otros lenguajes de programación se incluyen aquí en la misma estructura -->
+
+
+
+    <!--    <div class="code-container">
+    <header>
+        <span class="language-name">Python</span>
+      <span class="copy-code">
+        <button class="copy-button">
+            <svg viewBox="0 0 24 24">
+            </svg>Copiar Código
+        </button>
+      </span>
+    </header>
+    <pre class="language-python">
+      print("Hello, world!")
+    </pre>
+  </div>--->
+
+    <section id="html">
+      <h1>Tutoriales y Manuales de HTML</h1>
+      <div class="section-cont">
+        <h2>Tutoriales</h2>
+        <p>Aprende a crear páginas web desde cero con HTML</p>
+        <div class="html-li">
+          <ul>
+            <li>
+              <p><a href="#html-tutorial-1"><strong>Tutorial 1:</strong> Estructura básica de un documento HTML</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-2"><strong>Tutorial 2:</strong> Estructura básica de un documento HTML</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-3"><strong>Tutorial 3:</strong> Etiquetas de encabezado (h1, h2, h3, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-4"><strong>Tutorial 4:</strong> Etiquetas de párrafo (p)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-5"><strong>Tutorial 5:</strong> Listas (ul, ol, li)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-6"><strong>Tutorial 6:</strong> Enlaces (a)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-7"><strong>Tutorial 7:</strong> Imágenes (img)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-8"><strong>Tutorial 8:</strong> Tablas (table, tr, th, td)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-9"><strong>Tutorial 9:</strong> Formularios (form, input, select, option,
+                  textarea, button)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-10"><strong>Tutorial 10:</strong> Atributos comunes (class, id, style,
+                  etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-11"><strong>Tutorial 11:</strong> Semántica en HTML (header, nav, main,
+                  article, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-12"><strong>Tutorial 12:</strong> Metadatos y SEO (title, meta description,
+                  etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-13"><strong>Tutorial 13:</strong> Validación y pruebas en diferentes
+                  navegadores.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-tutorial-14"><strong>Tutorial 14:</strong> Introducción a HTML</a>
+              <p>
+            </li>
+          </ul>
+          <h2>Manuales</h2>
+          <p>Contenido de los manuales de HTML.</p>
+          <ul>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 1:</strong> HTML5 y las nuevas características, como la etiqueta
+                  semánticas y las API de HTML5.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 2:</strong> class="li-man">Uso de CSS para estilizar el contenido
+                  HTML</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 3:</strong> Integración de HTML con JavaScript para agregar
+                  interacción y dinamismo a la página web.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 4:</strong> Buenas prácticas en la estructuración y organización
+                  del código HTML.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 5:</strong> Uso de herramientas como flexbox y grid para crear
+                  diseños más avanzados.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 6:</strong> Accesibilidad en HTML, incluyendo la inclusión de
+                  etiquetas para describir el
+                  contenido y hacer que la página sea accesible para personas con discapacidades.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 7:</strong> Creación de tablas de contenido y índices para
+                  facilitar la navegación en la página.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 8:</strong> Uso de fragmentos URL para mejorar la experiencia del
+                  usuario al navegar en la página.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 9</strong> Creación de enlaces internos y externos para mejorar
+                  la navegación y el SEO.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 10:</strong> Optimización de imágenes y vídeos para mejorar el
+                  rendimiento y la velocidad de carga de la página.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 11:</strong> Uso de medios y elementos multimedia en HTML, como
+                  audio y video.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 12:</strong> Creación de formularios con validación en HTML y
+                  JavaScript.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 13:</strong> Integración de HTML con PHP y otras tecnologías del
+                  lado del servidor para crear aplicaciones web dinámicas.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#html-manual"><strong>Manual 14:</strong> Estos temas pueden proporcionar una comprensión más
+                  profunda y avanzada de HTML y su aplicación en la creación de páginas web.</a>
+              <p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="css">
+      <h1>Tutoriales y Manuales de CSS</h1>
+      <div class="section-cont">
+        <h2>Tutoriales</h2>
+        <p>Lista de temas a tratar en este tutorial.</p>
+        <div class="css-li">
+          <ul>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 1:</strong> Introducción a CSS</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 2:</strong> Selectores y reglas de estilo</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 3:</strong> Propiedades de texto (fuente, tamaño, color,
+                  alineación, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 4:</strong> Propiedades de borde, fondo y espacio</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 5:</strong> Posicionamiento y diseño de capas (float,
+                  display, position, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 6:</strong> Diseño de tablas y formularios</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 7:</strong> Animaciones y transiciones en CSS</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 8:</strong> Responsive design y media queries</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 9:</strong> CSS frameworks (Bootstrap, Foundation, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 10:</strong> Best practices y optimización de rendimiento en
+                  CSS</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 11:</strong> Herramientas de desarrollo para CSS
+                  (preprocesadores, depuradores, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-tutorial-1"><strong>Tutorial 12:</strong> CSS avanzado (pseudo-clases, pseudo-elementos,
+                  etc.)</a>
+              <p>
+            </li>
+          </ul>
+          <h2>Manuales</h2>
+          <p>Contenido de los manuales de CSS.</p>
+          <ul>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 1:</strong> Modelos de caja y conceptos básicos de diseño web</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 2:</strong> Propiedades de tamaño y medidas (porcentaje, em, rem,
+                  etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 3:</strong> Propiedades de transformación y diseño en dos
+                  dimensiones (scale, rotate, skew, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 4:</strong> Propiedades de listas y elementos desordenados</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 5:</strong> Flexbox y diseño en una sola dirección</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 6:</strong> Grid y diseño en dos dimensiones</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 7:</strong> Iconos y fuentes web</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 8:</strong> CSS Grid y CSS Flexbox</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 9:</strong> Integración con HTML y otros lenguajes web
+                  (JavaScript, PHP, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 10:</strong> Estilos personalizados para elementos HTML
+                  específicos (enlaces, encabezados, tablas, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 11:</strong> Temas y estilos preconstruidos para aplicaciones web
+                  y sitios.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#css-manual"><strong>Manual 12:</strong> Resolución de problemas comunes y debugging en
+                  CSS</a>
+              <p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="javascript">
+      <h1>Tutoriales y Manuales de JavaScript</h1>
+      <div class="section-cont">
+        <h2>Tutoriales</h2>
+        <p>Lista de temas a tratar en el tutorial de JavaScript:</p>
+        <div class="js-li">
+          <ul>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 1:</strong> Introducción a JavaScript: conceptos básicos,
+                  usos y aplicaciones</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 2:</strong> Variables: declaración, asignación y tipos de
+                  datos en JavaScript (number, string, boolean, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 3:</strong> Operadores: aritméticos, lógicos, de comparación,
+                  de asignación, etc.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 4:</strong> Estructuras de control de flujo: if/else, switch,
+                  loops (for, while)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 5:</strong> Funciones: definición, invocación, parámetros y
+                  retorno de valores</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 6:</strong> Arrays: creación, manipulación y métodos de
+                  arrays (push, pop, slice, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 7:</strong> Objetos: creación, propiedades, métodos y uso de
+                  objetos literales y constructores</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 8:</strong> Manipulación del DOM: seleccionar elementos,
+                  modificar atributos y contenido, añadir y eliminar elementos</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 9:</strong> Eventos: manejo de eventos en el DOM (click,
+                  hover, etc.)</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 10:</strong> Programación orientada a objetos en JavaScript:
+                  clases, constructores, herencia y prototipos</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 11:</strong> AJAX: realizar peticiones HTTP asíncronas y
+                  manipular datos JSON</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-tutorial-1"><strong>Tutorial 12:</strong> Frameworks y librerías JavaScript populares:
+                  jQuery, React, Vue, Angular, etc.</a>
+              <p>
+            </li>
+          </ul>
+          <h2>Manuales</h2>
+          <p>Contenido de los manuales de JavaScript.</p>
+          <ul>
+            <li>
+              <p><a href="#js-manual"><strong>Manual 1:</strong> Módulos en JavaScript: importación y exportación de
+                  módulos, CommonJS, ES6 modules</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#js-manual"><strong>Manual 2:</strong> EcmaScript 6 y posteriores: nuevas funcionalidades como
+                  let, const, template literals, destructuring, spread operator, etc.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#JS-manual"><strong>Manual 3:</strong> JavaScript en el servidor: Node.js, Express, etc.</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#JS-manual"><strong>Manual 4:</strong> Buenas prácticas y convenciones en JavaScript:
+                  hoisting, scope, closure, mejores prácticas en la escritura de código</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#JS-manual"><strong>Manual 5:</strong> Programación funcional en JavaScript: conceptos de
+                  programación funcional y aplicación en JavaScript</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#JS-manual"><strong>Manual 6:</strong> Promesas: manejo de operaciones asíncronas y resolución
+                  de valores con promesas</a>
+              <p>
+            </li>
+            <li>
+              <p><a href="#JS-manual"><strong>Manual 7:</strong> Programación reactiva: programación reaccionaria con
+                  JavaScript y librerías como RxJS.</a>
+              <p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contáctanos</h2>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje"></textarea><br><br>
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 EDF Tutoriales de Programación</p>
+  </footer>
+  </div>
+  <script>
+    /* Otro Código para el buscador */
+const searchIcon = document.querySelector('.search-icon');
+
+searchIcon.addEventListener('click', function() {
+  console.log('Búsqueda ejecutada');
+});
+/* Código para copiar el fragmento */
+const copyButton = document.querySelector('.copy-button');
+
+copyButton.addEventListener('click', (event) => {
+  const codeBlock = event.target.closest('.code-block');
+  const pre = codeBlock.querySelector('pre');
+
+  navigator.clipboard.writeText(pre.textContent).then(() => {
+    console.log('Código copiado al portapapeles');
+  });
+});
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"
+    integrity="sha256-V7aQkaxjKV7zfrKPxrVFzrX9BlGZK3qZbwbd7NuQi0A=" crossorigin="anonymous"></script>
+</body>
+
+</html>
